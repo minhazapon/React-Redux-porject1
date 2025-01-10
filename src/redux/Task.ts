@@ -14,7 +14,14 @@ const initialState: ISK = {
             description: " react.s is the best frontend tech ",
             dueTime: "2013",
             isComleted: true
-        }
+        },
+        {
+            id: "AACCS",
+            title: "Next.js Project",
+            description: " next.s is the best frontend tech ",
+            dueTime: "2013",
+            isComleted: true
+        },
     ]
 }
 
