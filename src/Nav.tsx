@@ -6,11 +6,9 @@ const Nav = () => {
     const NavZ = <>
 
         <li className=" font-serif text-xs "><NavLink to='/' >Home</NavLink></li>
-        <li className=" font-serif text-xs "><NavLink to='/redux' >Redux</NavLink></li>
+        <li className=" font-serif text-xs "><NavLink to='/redux' >Taskly</NavLink></li>
 
     </>
-
-
 
     return (
         <div>
@@ -39,8 +37,8 @@ const Nav = () => {
                         </ul>
                     </div>
                     <div className=" flex items-center gap-2 ">
-                        <img className=" h-[25px] " src="https://avatars.githubusercontent.com/u/13142323?v=4" alt="" />
-                        <a className="text-xs font-serif">Redux P1</a>
+                        <img className=" h-[30px] " src="https://cdn-icons-png.flaticon.com/128/10654/10654066.png" alt="" />
+                        <a className="text-xl font-serif">Taskly</a>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
