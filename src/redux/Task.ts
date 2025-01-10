@@ -19,7 +19,7 @@ const initialState: ISK = {
 }
 
 const taskSlice = createSlice({
-    name: "task",
+    name: "WorkTask",
     initialState,
     reducers: {}
 })
