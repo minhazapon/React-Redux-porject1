@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-
+import { ModeToggle } from "./components/ui/Drop";
 
 const Nav = () => {
 
@@ -45,6 +45,9 @@ const Nav = () => {
                     <ul className="menu menu-horizontal px-1">
                         {NavZ}
                     </ul>
+                </div>
+                <div className=" ml-auto ">
+                    <ModeToggle></ModeToggle>
                 </div>
             </div>
 
