@@ -17,9 +17,9 @@ import {
 } from "@/components/ui/form"; // Adjusted import path
 import { Input } from "@/components/ui/input";
 import { DialogDescription } from "@radix-ui/react-dialog";
-import { Textarea } from "./components/ui/textarea";
+import { Textarea } from "../components/ui/textarea";
 import { useDispatch } from "react-redux";
-import { addTask } from "./redux/Task";
+import { addTask } from "../redux/Task";
 
 export function AddButton() {
 

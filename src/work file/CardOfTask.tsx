@@ -1,5 +1,5 @@
 import { FaTrashAlt } from "react-icons/fa";
-import { TRoot } from "./redux/type";
+import { TRoot } from "../redux/type";
 
 interface Iprops {
     task: TRoot

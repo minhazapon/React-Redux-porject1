@@ -1,5 +1,5 @@
 import { useSelector } from "react-redux";
-import { rootState } from "./redux/store"
+import { rootState } from "../redux/store"
 import TaskCard from "./CardOfTask";
 import { AddButton } from "./AddButton";
 

@@ -1,5 +1,5 @@
 
-import WorkTas from "./WorkTas";
+import WorkTas from "./work file/WorkTas";
 
 const Home = () => {
     return (
