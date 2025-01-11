@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { TRoot } from "./type";
 
 interface ISK {
@@ -6,26 +6,19 @@ interface ISK {
 }
 
 const initialState: ISK = {
-    task: [
-
-        {
-            id: "AABB",
-            title: "FrontEnd Project",
-            description: " react.s is the best frontend tech ",
-            dueTime: "2013",
-        },
-        {
-            id: "AACCS",
-            title: "Next.js Project",
-            description: " next.s is the best frontend tech ",
-            dueTime: "2013",
-        }
-    ]
+    task: []
 }
 
 const taskSlice = createSlice({
     name: "WorkTask",
     initialState,
-    reducers: {}
+    reducers: {
+        addTask: (state, action: PayloadAction<TRoot>) => {
+            state.task.push(action.payload)
+        }
+    }
 })
+
+export const { addTask } = taskSlice.actions
+
 export default taskSlice.reducer;

@@ -1,13 +1,11 @@
 import { useSelector } from "react-redux";
 import { rootState } from "./redux/store"
 import TaskCard from "./CardOfTask";
-import { Dialog } from "@radix-ui/react-dialog";
 import { AddButton } from "./AddButton";
 
 const WorkTas = () => {
 
     const Tasks = useSelector((state: rootState) => state.taskZ.task)
-    console.log(Tasks)
 
     return (
 

@@ -18,16 +18,19 @@ import {
 import { Input } from "@/components/ui/input";
 import { DialogDescription } from "@radix-ui/react-dialog";
 import { Textarea } from "./components/ui/textarea";
-import { Calendar } from "./components/ui/calendar";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addTask } from "./redux/Task";
 
 export function AddButton() {
-    const [selectedDate, setSelectedDate] = useState(null);
-    const Forms = useForm(); // Initialize react-hook-form
 
+    const dispatch = useDispatch()
+
+    const Forms = useForm(); // Initialize react-hook-form
 
     const onSubmit = (data: any) => {
         console.log(data); // Handle form data
+        dispatch(addTask(data))
     };
 
     return (
@@ -36,7 +39,7 @@ export function AddButton() {
                 <Button variant="outline">Add Task</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
-                <DialogDescription className=" sr-only ">
+                <DialogDescription className="sr-only">
                     Fill This Form
                 </DialogDescription>
                 <DialogHeader>
@@ -81,30 +84,8 @@ export function AddButton() {
                             />
                         </div>
                         <div className=" mt-5 ">
-                            <FormField
-                                control={Forms.control}
-                                name="dueTime"
-                                render={({ field }) => (
-                                    <FormItem>
-                                        <FormLabel>DueTime</FormLabel>
-                                        <FormControl>
-                                            <Calendar
-                                                mode="single"
-                                                selected={field.value || selectedDate}
-                                                onSelect={(date: any) => {
-                                                    setSelectedDate(date);
-                                                    field.onChange(date); // Update the form value
-                                                }}
-                                                className="rounded-md border shadow"
-                                            />
-                                        </FormControl>
-                                    </FormItem>
-                                )}
-                            />
-                        </div>
-                        <div className=" mt-5 ">
                             <DialogFooter>
-                                <Button type="submit">Save Task</Button>
+                                <Button type="submit" className=" btn ">Save Task</Button>
                             </DialogFooter>
                         </div>
                     </form>
