@@ -6,6 +6,5 @@ export interface TRoot {
     title: string,
     description: string,
     dueTime: string,
-    isComleted: boolean
 
 }

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import {
     Dialog,
@@ -18,9 +17,14 @@ import {
 } from "@/components/ui/form"; // Adjusted import path
 import { Input } from "@/components/ui/input";
 import { DialogDescription } from "@radix-ui/react-dialog";
+import { Textarea } from "./components/ui/textarea";
+import { Calendar } from "./components/ui/calendar";
+import { useState } from "react";
 
 export function AddButton() {
+    const [selectedDate, setSelectedDate] = useState(null);
     const Forms = useForm(); // Initialize react-hook-form
+
 
     const onSubmit = (data: any) => {
         console.log(data); // Handle form data
@@ -57,6 +61,47 @@ export function AddButton() {
                                 </FormItem>
                             )}
                         />
+                        <div className=" mt-5 ">
+                            <FormField
+                                control={Forms.control}
+                                name="description"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>Description</FormLabel>
+                                        <FormControl>
+                                            <Textarea
+                                                {...field}
+                                                value={field.value || ""}
+                                                placeholder="Enter task Description"
+                                                required
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+                        <div className=" mt-5 ">
+                            <FormField
+                                control={Forms.control}
+                                name="dueTime"
+                                render={({ field }) => (
+                                    <FormItem>
+                                        <FormLabel>DueTime</FormLabel>
+                                        <FormControl>
+                                            <Calendar
+                                                mode="single"
+                                                selected={field.value || selectedDate}
+                                                onSelect={(date: any) => {
+                                                    setSelectedDate(date);
+                                                    field.onChange(date); // Update the form value
+                                                }}
+                                                className="rounded-md border shadow"
+                                            />
+                                        </FormControl>
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
                         <div className=" mt-5 ">
                             <DialogFooter>
                                 <Button type="submit">Save Task</Button>

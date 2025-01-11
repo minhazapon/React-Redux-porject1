@@ -14,6 +14,9 @@ const TaskCard = ({ task }: Iprops) => {
                     <p className="text-sm text-gray-600 mt-1">
                         {task.description}
                     </p>
+                    <p className="text-sm text-gray-600 mt-1">
+                        {task.dueTime}
+                    </p>
                 </div>
                 <div className="flex items-center space-x-2">
                     <button
