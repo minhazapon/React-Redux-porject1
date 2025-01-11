@@ -17,6 +17,7 @@ import {
     FormLabel,
 } from "@/components/ui/form"; // Adjusted import path
 import { Input } from "@/components/ui/input";
+import { DialogDescription } from "@radix-ui/react-dialog";
 
 export function AddButton() {
     const Forms = useForm(); // Initialize react-hook-form
@@ -31,6 +32,9 @@ export function AddButton() {
                 <Button variant="outline">Add Task</Button>
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
+                <DialogDescription className=" sr-only ">
+                    Fill This Form
+                </DialogDescription>
                 <DialogHeader>
                     <DialogTitle>Add Task</DialogTitle>
                 </DialogHeader>
@@ -45,6 +49,7 @@ export function AddButton() {
                                     <FormControl>
                                         <Input
                                             {...field}
+                                            value={field.value || ""}
                                             placeholder="Enter task title"
                                             required
                                         />
